@@ -24,9 +24,11 @@ async def hello(message: Message):
 
 @dp.message(F.document)
 async def document(message: Message):
-    await message.answer(f"Document received: {message.document.file_id} file_name {message.document.file_name}")
-    await bot.download(file=message.document.file_id, destination=f"books/{message.document.file_name}")
-
+    try:
+        await bot.download(file=message.document.file_id, destination=f"books/{message.document.file_name}")
+        await message.answer(f"ваш файл {message.document.file_name} скачен ")
+    except:
+        await message.answer("не удалось скачать файл т.к его размер превышает 20 мб")
 
 if __name__ == '__main__':
     asyncio.run(main())
