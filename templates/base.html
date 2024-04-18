@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(42, 38, 51);">
+<ul class="list-group">
+    {% for book in books %}
+    <li class="list-group-item rounded-4" style="background-color: rgb(60, 65, 82);"><a href="book/{{book}}" style="color: rgb(155, 125, 42);">{{ book}}</a></li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
